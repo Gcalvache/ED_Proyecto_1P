@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1748725573 source:c:\users\josed\onedrive - universidad de las fuerzas armadas espe\documentos\proyectos c++\proyectoedp1\proyectoed_1erparcial\main.cpp
+	<SFML/Graphics.hpp>
+	<iostream>
+	<string>
+	<thread>
+	<chrono>
+	"Pila.hpp"
+	"Colas.hpp"
+	"Listas.hpp"
+	"Contacto.hpp"
+
+1748710589 c:\users\josed\onedrive - universidad de las fuerzas armadas espe\documentos\proyectos c++\proyectoedp1\proyectoed_1erparcial\pila.hpp
+	<iostream>
+
+1748714734 c:\users\josed\onedrive - universidad de las fuerzas armadas espe\documentos\proyectos c++\proyectoedp1\proyectoed_1erparcial\colas.hpp
+	<iostream>
+	<string>
+
+1748715777 c:\users\josed\onedrive - universidad de las fuerzas armadas espe\documentos\proyectos c++\proyectoedp1\proyectoed_1erparcial\listas.hpp
+	<iostream>
+	<string>
+
+1748447974 c:\users\josed\onedrive - universidad de las fuerzas armadas espe\documentos\proyectos c++\proyectoedp1\proyectoed_1erparcial\contacto.hpp
+
