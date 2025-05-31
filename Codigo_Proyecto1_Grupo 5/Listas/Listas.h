@@ -17,9 +17,9 @@ private:
     Nodo* cabeza;
     Nodo* cola;
 public:
-    Listadoble() : cabeza(nullptr), cola(nullptr) {}
+    ListaDinamica() : cabeza(nullptr), cola(nullptr) {}
 
-    ~Listadoble(){
+    ~ListaDinamica(){
         Nodo* actual = cabeza;
         while (actual){
             Nodo* siguiente = actual -> siguiente;
@@ -89,7 +89,7 @@ bool eliminar(const T& dato){
 void mostrarAdelante()const{
     Nodo* actual=cabeza;
     while(actual){
-        actual->dato.mostrar();
+        cout<<actual->dato<<endl;
         cout<<"------------------------------------\n";
         actual=actual->siguiente;
     }
@@ -98,7 +98,7 @@ void mostrarAdelante()const{
 void mostrarAtras()const{
     Nodo* actual=cola;
     while(actual){
-        actual->dato.mostrar();
+        cout<<actual->dato<<endl;
         cout<<"------------------------------------\n";
         actual=actual->anterior;
     }
