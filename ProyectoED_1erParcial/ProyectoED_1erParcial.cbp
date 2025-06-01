@@ -20,10 +20,14 @@
 				<Option compiler="gcc-mingw64" />
 			</Target>
 		</Build>
+		<Compiler>
+			<Add directory="C:/Users/pepin/OneDrive/Documentos/Codigos/Unidad 1/Proyecto/ED_Proyecto_1P/ProyectoED_1erParcial/SFML-2.6.1/include" />
+		</Compiler>
 		<Linker>
 			<Add library="sfml-graphics" />
 			<Add library="sfml-window" />
 			<Add library="sfml-system" />
+			<Add directory="C:/Users/pepin/OneDrive/Documentos/Codigos/Unidad 1/Proyecto/ED_Proyecto_1P/ProyectoED_1erParcial/SFML-2.6.1/lib" />
 		</Linker>
 		<Unit filename="../../../../../Downloads/Colas.hpp">
 			<Option virtualFolder="OneDrive - UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE/Documentos/Proyectos C++/ProyectoEDP1/ProyectoED_1erParcial/" />

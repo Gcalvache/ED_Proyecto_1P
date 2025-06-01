@@ -17,7 +17,7 @@ const int BASE_Y = 500;
 
 // ANIMACIONES
 struct NodoVisual {
-    std::string texto;
+    string texto;
     float x, y;
     sf::Color color;
     int id;
@@ -26,7 +26,7 @@ struct NodoVisual {
 
 NodoVisual* pilaVisual = nullptr;
 
-void animarInsercionPila(const std::string& texto, sf::RenderWindow& window, sf::Font& fuente) {
+void animarInsercionPila(const string& texto, sf::RenderWindow& window, sf::Font& fuente) {
     // Crear nodo visual
     int r = 100 + rand() % 156, g = 100 + rand() % 156, b = 100 + rand() % 156;
     sf::Color color(r, g, b);
@@ -69,7 +69,7 @@ void animarInsercionPila(const std::string& texto, sf::RenderWindow& window, sf:
             id.setPosition(ORIGEN_X + 225, y + 10);
             window.draw(id);
 
-            sf::Text idText(std::to_string(actual->id), fuente, 12);
+            sf::Text idText(to_string(actual->id), fuente, 12);
             idText.setFillColor(sf::Color::Black);
             idText.setPosition(id.getPosition().x + 3, id.getPosition().y);
             window.draw(idText);
@@ -78,7 +78,7 @@ void animarInsercionPila(const std::string& texto, sf::RenderWindow& window, sf:
             i++;
         }
         window.display();
-        std::this_thread::sleep_for(std::chrono::milliseconds(15));
+        this_thread::sleep_for(chrono::milliseconds(15));
     }
 }
 
@@ -112,7 +112,7 @@ void animarEliminacionPila(sf::RenderWindow& window, sf::Font& fuente) {
             bolita.setPosition(ORIGEN_X + 225, y + 10);
             window.draw(bolita);
 
-            sf::Text idText(std::to_string(actual->id), fuente, 12);
+            sf::Text idText(to_string(actual->id), fuente, 12);
             idText.setFillColor(sf::Color::Black);
             idText.setPosition(bolita.getPosition().x + 3, bolita.getPosition().y);
             window.draw(idText);
@@ -121,7 +121,7 @@ void animarEliminacionPila(sf::RenderWindow& window, sf::Font& fuente) {
             i++;
         }
         window.display();
-        std::this_thread::sleep_for(std::chrono::milliseconds(15));
+        this_thread::sleep_for(chrono::milliseconds(15));
     }
 
     pilaVisual = pilaVisual->siguiente;
@@ -143,7 +143,7 @@ void actualizarIndicesCola() {
     }
 }
 
-void animarInsercionCola(const std::string& texto, sf::RenderWindow& window, sf::Font& fuente) {
+void animarInsercionCola(const string& texto, sf::RenderWindow& window, sf::Font& fuente) {
     int r = 100 + rand() % 156;
     int g = 100 + rand() % 156;
     int b = 100 + rand() % 156;
@@ -201,7 +201,7 @@ void animarInsercionCola(const std::string& texto, sf::RenderWindow& window, sf:
             bolita.setPosition(x + ANCHO - 25, BASE_Y + 5);
             window.draw(bolita);
 
-            sf::Text idText(std::to_string(actual->id), fuente, 12);
+            sf::Text idText(to_string(actual->id), fuente, 12);
             idText.setFillColor(sf::Color::Black);
             idText.setPosition(bolita.getPosition().x + 3, bolita.getPosition().y);
             window.draw(idText);
@@ -211,7 +211,7 @@ void animarInsercionCola(const std::string& texto, sf::RenderWindow& window, sf:
         }
 
         window.display();
-        std::this_thread::sleep_for(std::chrono::milliseconds(15));
+        this_thread::sleep_for(chrono::milliseconds(15));
     }
     nuevo->x = destinoX;
 
@@ -249,7 +249,7 @@ void animarEliminacionCola(sf::RenderWindow& window, sf::Font& fuente) {
             bolita.setPosition(x + ANCHO - 25, BASE_Y + 5);
             window.draw(bolita);
 
-            sf::Text idText(std::to_string(actual->id), fuente, 12);
+            sf::Text idText(to_string(actual->id), fuente, 12);
             idText.setFillColor(sf::Color::Black);
             idText.setPosition(bolita.getPosition().x + 3, bolita.getPosition().y);
             window.draw(idText);
@@ -259,7 +259,7 @@ void animarEliminacionCola(sf::RenderWindow& window, sf::Font& fuente) {
         }
 
         window.display();
-        std::this_thread::sleep_for(std::chrono::milliseconds(15));
+        this_thread::sleep_for(chrono::milliseconds(15));
     }
         colaVisual = colaVisual->siguiente;
     delete eliminar;
@@ -270,7 +270,7 @@ void animarEliminacionCola(sf::RenderWindow& window, sf::Font& fuente) {
 NodoVisual* listaVisual = nullptr;
 void dibujarListaDoble(sf::RenderWindow& window, sf::Font& fuente, NodoVisual* cabeza);
 
-void animarInsercionLista(const std::string& texto, sf::RenderWindow& window, sf::Font& fuente) {
+void animarInsercionLista(const string& texto, sf::RenderWindow& window, sf::Font& fuente) {
     int r = 100 + rand() % 156;
     int g = 100 + rand() % 156;
     int b = 100 + rand() % 156;
@@ -298,7 +298,7 @@ void animarInsercionLista(const std::string& texto, sf::RenderWindow& window, sf
         nuevo->y += 5;
         window.clear(sf::Color::White);
         dibujarListaDoble(window, fuente, listaVisual);
-        std::this_thread::sleep_for(std::chrono::milliseconds(15));
+        this_thread::sleep_for(chrono::milliseconds(15));
     }
 }
 
@@ -315,7 +315,7 @@ void animarEliminacionLista(sf::RenderWindow& window, sf::Font& fuente) {
     for (float scale = 1.0f; scale >= 0.2f; scale -= 0.05f) {
         window.clear(sf::Color::White);
         dibujarListaDoble(window, fuente, listaVisual);
-        std::this_thread::sleep_for(std::chrono::milliseconds(20));
+        this_thread::sleep_for(chrono::milliseconds(20));
     }
 
     if (!anterior) {
@@ -355,7 +355,7 @@ void dibujarPilaVisual(sf::RenderWindow& window, sf::Font& fuente) {
         bolita.setPosition(ORIGEN_X + 225, y + 10);
         window.draw(bolita);
 
-        sf::Text idText(std::to_string(actual->id), fuente, 12);
+        sf::Text idText(to_string(actual->id), fuente, 12);
         idText.setFillColor(sf::Color::Black);
         idText.setPosition(bolita.getPosition().x + 3, bolita.getPosition().y);
         window.draw(idText);
@@ -391,7 +391,7 @@ void dibujarColaVisual(sf::RenderWindow& window, sf::Font& fuente) {
         bolita.setPosition(x + ANCHO - 25, BASE_Y + 10);
         window.draw(bolita);
 
-        sf::Text idText(std::to_string(actual->id), fuente, 12);
+        sf::Text idText(to_string(actual->id), fuente, 12);
         idText.setFillColor(sf::Color::Black);
         idText.setPosition(bolita.getPosition().x + 3, bolita.getPosition().y);
         window.draw(idText);
@@ -427,7 +427,7 @@ void dibujarListaDoble(sf::RenderWindow& window, sf::Font& fuente, NodoVisual* c
         bolita.setPosition(x + ANCHO - 25, BASE_Y + 5);
         window.draw(bolita);
 
-        sf::Text idText(std::to_string(actual->id), fuente, 12);
+        sf::Text idText(to_string(actual->id), fuente, 12);
         idText.setFillColor(sf::Color::Black);
         idText.setPosition(bolita.getPosition().x + 3, bolita.getPosition().y);
         window.draw(idText);
@@ -440,34 +440,34 @@ void dibujarListaDoble(sf::RenderWindow& window, sf::Font& fuente, NodoVisual* c
 }
 
 void menuPila(sf::RenderWindow& window) {
-    Pila<std::string> pila;
+    Pila<string> pila;
     int op;
-    std::string dato;
+    string dato;
     sf::Font font;
     font.loadFromFile("C:/Windows/Fonts/consola.ttf");
 
     do {
-        std::cout << "\n--- PILA ---\n";
-        std::cout << "1. Insertar página\n2. Retirar página\n3. Ver página actual\n4. Mostrar historial\n0. Volver\nOpcion: ";
-        std::cin >> op;
-        std::cin.ignore();
+        cout << "\n--- PILA ---\n";
+        cout << "1. Insertar pagina\n2. Retirar pagina\n3. Ver pagina actual\n4. Mostrar historial\n0. Volver\nOpcion: ";
+        cin >> op;
+        cin.ignore();
 
         switch (op) {
             case 1:
-                std::cout << "Ingrese nombre de página: ";
-                getline(std::cin, dato);
+                cout << "Ingrese nombre de pagina: ";
+                getline(cin, dato);
                 pila.insertarPagina(dato);
                 animarInsercionPila(dato, window, font);
                 break;
             case 2:
                 if (!pila.estaVacia()) {
-                    std::string eliminado = pila.verPaginaActual();
+                    string eliminado = pila.verPaginaActual();
                     animarEliminacionPila(window, font);
                     pila.retirarPagina();
                 }
                 break;
             case 3:
-                std::cout << "Página actual: " << pila.verPaginaActual() << "\n";
+                cout << "Pagina actual: " << pila.verPaginaActual() << "\n";
                 break;
             case 4:
                 pila.mostrarHistorial();
@@ -478,22 +478,22 @@ void menuPila(sf::RenderWindow& window) {
 }
 
 void menuCola(sf::RenderWindow& window) {
-    Cola<std::string> cola;
+    Cola<string> cola;
     int op;
-    std::string dato;
+    string dato;
     sf::Font font;
     font.loadFromFile("C:/Windows/Fonts/consola.ttf");
 
     do {
-        std::cout << "\n--- COLA ---\n";
-        std::cout << "1. Insertar\n2. Eliminar\n3. Mostrar\n0. Volver\nOpcion: ";
-        std::cin >> op;
-        std::cin.ignore();
+        cout << "\n--- COLA ---\n";
+        cout << "1. Insertar\n2. Eliminar\n3. Mostrar\n0. Volver\nOpcion: ";
+        cin >> op;
+        cin.ignore();
 
         switch (op) {
             case 1:
-                std::cout << "Ingrese dato: ";
-                getline(std::cin, dato);
+                cout << "Ingrese dato: ";
+                getline(cin, dato);
                 cola.insertar(dato);
                 animarInsercionCola(dato, window, font);
                 break;
@@ -512,24 +512,24 @@ void menuCola(sf::RenderWindow& window) {
 }
 
 void menuLista(sf::RenderWindow& window) {
-    ListaDoble<Contacto<std::string>> lista;
+    ListaDoble<Contacto<string>> lista;
     int op;
-    std::string nombre, telefono, correo;
+    string nombre, telefono, correo;
     sf::Font font;
     font.loadFromFile("C:/Windows/Fonts/consola.ttf");
 
     do {
-        std::cout << "\n--- LISTA ---\n";
-        std::cout << "1. Insertar\n2. Eliminar\n3. Mostrar adelante\n4. Mostrar atrás\n5. Modificar\n0. Volver\nOpcion: ";
-        std::cin >> op;
-        std::cin.ignore();
+        cout << "\n--- LISTA ---\n";
+        cout << "1. Insertar\n2. Eliminar\n3. Mostrar adelante\n4. Mostrar atras\n5. Modificar\n0. Volver\nOpcion: ";
+        cin >> op;
+        cin.ignore();
 
         switch (op) {
             case 1:
-                std::cout << "Nombre: "; getline(std::cin, nombre);
-                std::cout << "Teléfono: "; getline(std::cin, telefono);
-                std::cout << "Correo: "; getline(std::cin, correo);
-                lista.insertar(Contacto<std::string>(nombre, telefono, correo));
+                cout << "Nombre: "; getline(cin, nombre);
+                cout << "Teléfono: "; getline(cin, telefono);
+                cout << "Correo: "; getline(cin, correo);
+                lista.insertar(Contacto<string>(nombre, telefono, correo));
                 animarInsercionLista(nombre, window, font);
                 break;
             case 2:
@@ -542,10 +542,10 @@ void menuLista(sf::RenderWindow& window) {
                 lista.mostrarAtras();
                 break;
             case 5:
-                std::cout << "Nombre del contacto a modificar: ";
-                getline(std::cin, nombre);
-                if (!lista.modificar(Contacto<std::string>(nombre, "", ""))) {
-                    std::cout << "Contacto no encontrado.\n";
+                cout << "Nombre del contacto a modificar: ";
+                getline(cin, nombre);
+                if (!lista.modificar(Contacto<string>(nombre, "", ""))) {
+                    cout << "Contacto no encontrado.\n";
                 }
                 break;
         }
@@ -557,9 +557,9 @@ int main() {
     sf::RenderWindow window(sf::VideoMode(900, 600), "Visualizador de Estructuras", sf::Style::Close);
     int opcion;
     do {
-        std::cout << "\n=== MENU PRINCIPAL ===\n";
-        std::cout << "1. Pila\n2. Cola\n3. Lista\n0. Salir\nOpcion: ";
-        std::cin >> opcion;
+        cout << "\n=== MENU PRINCIPAL ===\n";
+        cout << "1. Pila\n2. Cola\n3. Lista\n0. Salir\nOpcion: ";
+        cin >> opcion;
         switch (opcion) {
             case 1: menuPila(window); break;
             case 2: menuCola(window); break;
