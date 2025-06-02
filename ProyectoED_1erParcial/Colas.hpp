@@ -7,7 +7,7 @@
 using namespace std;
 
 template <typename T>
-class Cola {
+struct Cola {
 private:
     struct Nodo {
         T dato;

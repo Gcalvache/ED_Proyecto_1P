@@ -2,7 +2,7 @@
 #define CONTACTO_HPP
 
 template <typename T>
-class Contacto{
+struct Contacto{
 public:
     T nombre;
     T telefono;

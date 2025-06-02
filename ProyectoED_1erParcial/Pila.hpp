@@ -6,7 +6,7 @@
 using namespace std;
 
 template <typename T>
-class Pila {
+struct Pila {
 private:
     struct Nodo {
         T dato;

@@ -527,14 +527,24 @@ void menuLista(sf::RenderWindow& window) {
         switch (op) {
             case 1:
                 cout << "Nombre: "; getline(cin, nombre);
-                cout << "Teléfono: "; getline(cin, telefono);
+                cout << "Telefono: "; getline(cin, telefono);
                 cout << "Correo: "; getline(cin, correo);
                 lista.insertar(Contacto<string>(nombre, telefono, correo));
                 animarInsercionLista(nombre, window, font);
                 break;
-            case 2:
+            case 2:{
+                cout<<"Ingrese el nombre a eliminar: \n";
+                getline(cin,nombre);
+                Contacto<string>c(nombre, "", "");
+                if(lista.eliminar(c)){
+                    cout<<"Contacto Eliminado\n";
+                }else{
+                    cout<<"No se pudo eliminar el contacto\n";
+                }
                 animarEliminacionLista(window, font);
                 break;
+                }
+
             case 3:
                 lista.mostrarAdelante();
                 break;
